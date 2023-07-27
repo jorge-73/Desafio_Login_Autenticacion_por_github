@@ -1,0 +1,128 @@
+<div class="container bg-secondary">
+  <h2 class="text-center text-white py-2">Real Time Products</h2>
+
+  <hr class="text-white" />
+
+  <div class="card mb-5 col-md-6 offset-md-3">
+    <div class="card-header text-center">
+      <h5>Created Products</h5>
+    </div>
+    <div class="card-body">
+      <form id="form" enctype="multipart/form-data" action="/api/products">
+        <div class="mb-2">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="description" class="form-label">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="description"
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="Price" class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            name="price"
+            id="Price"
+            step="0.01"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Thumbnail</label>
+          <input 
+          type="file"
+          name="file"
+          id="image" />
+        </div>
+        <div class="mb-2">
+          <label for="code" class="form-label">Code</label>
+          <input
+            type="text"
+            class="form-control"
+            name="code"
+            id="code"
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="category" class="form-label">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            name="category"
+            id="category"
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="Stock" class="form-label">Stock</label>
+          <input
+            type="number"
+            class="form-control"
+            name="stock"
+            id="Stock"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-outline-success form-control fw-bold"
+          id="addProduct"
+        >Add Product</button>
+      </form>
+    </div>
+  </div>
+
+  <hr class="text-white" />
+
+  <table
+    class="table table-bordered table-striped table-hover text-center mt-5"
+    id="productsTable"
+  >
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Code</th>
+        <th>Category</th>
+        <th>Stock</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      {{#each allProducts}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.code}}</td>
+          <td>{{this.category}}</td>
+          <td>{{this.stock}}</td>
+          <td>
+            <button
+              class="btn btn-danger"
+              onclick="deleteProduct(`{{this._id}}`)"
+              id="btnDelete"
+            >Delete</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

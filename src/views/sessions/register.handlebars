@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="text-center py-5">User Register</h1>
+
+<div class="row py-3">
+  <div class="col-md-6 offset-md-3">
+    <form action="/sessions/register" method="post" class="border border-dark p-3 rounded-3 shadow">
+<div class="mb-3">
+  <label for="first_name" class="form-label fw-bold">First Name:</label>
+  <input type="text"
+    class="form-control" name="first_name" id="first_name" required>
+</div>
+<div class="mb-3">
+  <label for="last_name" class="form-label fw-bold">Last Name:</label>
+  <input type="text"
+    class="form-control" name="last_name" id="last_name" required>
+</div>
+<div class="mb-3">
+  <label for="email" class="form-label fw-bold">Email:</label>
+  <input type="email" class="form-control" name="email" id="email" required>
+</div>
+<div class="mb-3">
+  <label for="age" class="form-label fw-bold">Age:</label>
+  <input type="number"
+    class="form-control" name="age" id="age" min="1" max="99" required>
+</div>
+<div class="mb-3">
+  <label for="password" class="form-label fw-bold">Password</label>
+  <input type="password"
+    class="form-control" name="password" id="password" required>
+</div>
+<div class="mb-3 text-center">
+  <button type="submit" class="btn btn-outline-success px-5 fw-bold">Register</button>
+</div>
+</form>
+  </div>
+</div>
+</div>

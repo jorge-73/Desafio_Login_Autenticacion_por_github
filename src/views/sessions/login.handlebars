@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center py-5">User Login</h1>
+
+  <div class="row py-3">
+    <div class="col-md-6 offset-md-3">
+      <form action="/sessions/login" method="post" class="border border-dark p-3 rounded-3 shadow">
+        <div class="mb-3">
+          <label for="email" class="form-label fw-bold">Email:</label>
+          <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label fw-bold">Password:</label>
+          <input type="password" class="form-control" name="password" id="password" required>
+        </div>
+        <div class="mb-3 text-center">
+          <button type="submit" class="btn btn-outline-primary px-5 fw-bold">Login</button>
+        </div>
+      </form>
+      <hr>
+      <div class="col-md-6 offset-md-3">
+        <a href="/sessions/github" class="btn btn-dark form-control p-2 fw-bold">Login with github</a>
+      </div>
+      <hr>
+      <div class="text-center">
+        <h5> If you do not have an account <a href="/sessions/register">Register</a></h5>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+</div>
