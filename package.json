@@ -1,5 +1,5 @@
 {
-  "name": "implementacion_de_login",
+  "name": "login_autenticacion_github",
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",

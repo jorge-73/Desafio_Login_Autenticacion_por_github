@@ -32,7 +32,7 @@ export const createHash = (password) =>
 export const isValidPassword = (user, password) =>
   bcrypt.compareSync(password, user.password);
 
-// Midelware para comprobar si hay un usuario activo. sino redirigir a login
+// Middleware para comprobar si hay un usuario activo. sino redirigir a login
 export const requireAuth = (req, res, next) => {
   if (!req.session?.passport?.user) {
     res.redirect("/sessions/login");
